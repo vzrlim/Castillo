@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #fefbf8;
+  --foreground: #4a4454;
+  --card: #ffffff;
+  --card-foreground: #4a4454;
+  --popover: #ffffff;
+  --popover-foreground: #4a4454;
+  --primary: #e8b4cb;
+  --primary-foreground: #ffffff;
+  --secondary: #f4e6f0;
+  --secondary-foreground: #4a4454;
+  --muted: #f9f4f7;
+  --muted-foreground: #8b7a8a;
+  --accent: #f0d9e7;
+  --accent-foreground: #4a4454;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(232, 180, 203, 0.2);
+  --input: transparent;
+  --input-background: #faf7f9;
+  --switch-background: #e8b4cb;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #e8b4cb;
+  --chart-1: #e8b4cb;
+  --chart-2: #d4a5c7;
+  --chart-3: #c196c2;
+  --chart-4: #ad87bd;
+  --chart-5: #9a78b8;
+  --radius: 1rem;
+  --sidebar: #fefbf8;
+  --sidebar-foreground: #4a4454;
+  --sidebar-primary: #e8b4cb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4e6f0;
+  --sidebar-accent-foreground: #4a4454;
+  --sidebar-border: rgba(232, 180, 203, 0.2);
+  --sidebar-ring: #e8b4cb;
+  
+  /* Balletcore custom properties */
+  --ballet-pink: #f8e8f0;
+  --ballet-rose: #e8b4cb;
+  --ballet-blush: #f4d2dd;
+  --ballet-cream: #fefbf8;
+  --ballet-lavender: #e6d9f0;
+  --ballet-mauve: #c8a8c8;
+}
+
+.dark {
+  --background: #2d2530;
+  --foreground: #f4e6f0;
+  --card: #2d2530;
+  --card-foreground: #f4e6f0;
+  --popover: #2d2530;
+  --popover-foreground: #f4e6f0;
+  --primary: #e8b4cb;
+  --primary-foreground: #2d2530;
+  --secondary: #3d3340;
+  --secondary-foreground: #f4e6f0;
+  --muted: #3d3340;
+  --muted-foreground: #a898a8;
+  --accent: #3d3340;
+  --accent-foreground: #f4e6f0;
+  --destructive: #d4183d;
+  --destructive-foreground: #f4e6f0;
+  --border: rgba(232, 180, 203, 0.3);
+  --input: #3d3340;
+  --ring: #e8b4cb;
+  --sidebar: #2d2530;
+  --sidebar-foreground: #f4e6f0;
+  --sidebar-primary: #e8b4cb;
+  --sidebar-primary-foreground: #2d2530;
+  --sidebar-accent: #3d3340;
+  --sidebar-accent-foreground: #f4e6f0;
+  --sidebar-border: rgba(232, 180, 203, 0.3);
+  --sidebar-ring: #e8b4cb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Balletcore theme colors */
+  --color-ballet-pink: var(--ballet-pink);
+  --color-ballet-rose: var(--ballet-rose);
+  --color-ballet-blush: var(--ballet-blush);
+  --color-ballet-cream: var(--ballet-cream);
+  --color-ballet-lavender: var(--ballet-lavender);
+  --color-ballet-mauve: var(--ballet-mauve);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/**
+ * Base typography with ballet-inspired styling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--foreground);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--foreground);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--foreground);
+    }
+
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--foreground);
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      color: var(--foreground);
+    }
+
+    label {
+      font-family: 'Inter', sans-serif;
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-family: 'Inter', sans-serif;
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-family: 'Inter', sans-serif;
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Balletcore-specific animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ribbon-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+.ballet-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ribbon-wave {
+  animation: ribbon-wave 4s ease-in-out infinite;
+}
+
+/* Custom balletcore utilities */
+.bg-gradient-ballet {
+  background: linear-gradient(135deg, var(--ballet-cream) 0%, var(--ballet-pink) 50%, var(--ballet-lavender) 100%);
+}
+
+.text-gradient-ballet {
+  background: linear-gradient(135deg, var(--ballet-rose) 0%, var(--ballet-mauve) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(232, 180, 203, 0.2);
+}
