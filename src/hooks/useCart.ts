@@ -9,7 +9,7 @@ export interface CartItem {
   quantity: number;
 }
 
-export function useCartLogic() {
+export function useCart() {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -75,3 +75,5 @@ export function useCartLogic() {
     clearCart,
   };
 }
+
+export { useCart }
